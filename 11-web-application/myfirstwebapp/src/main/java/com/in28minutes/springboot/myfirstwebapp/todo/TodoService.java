@@ -31,8 +31,15 @@ public class TodoService {
     }
 
     public void deleteById(int id) {
+        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+        todos.removeIf(predicate);
+    }
+
+    public Todo findById(int id) {
         Predicate<? super Todo> predicate
                 = todo -> todo.getId() == id;
-        todos.removeIf(predicate);
+        Todo todo = todos.stream().filter(predicate).findFirst().get();
+
+        return todo;
     }
 }
