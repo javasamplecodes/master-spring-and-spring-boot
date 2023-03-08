@@ -62,11 +62,26 @@ public class TodoController {
         return "redirect:list-todos";
     }
 
-    @RequestMapping("update-todo")
+    @RequestMapping(value = "update-todo", method = RequestMethod.GET)
     public String showUpdateTodoPage(@RequestParam int id, ModelMap model) {
         Todo todo = todoService.findById(id);
         model.put("todo", todo);
         return "todo";
     }
 
+    @RequestMapping(value = "update-todo", method = RequestMethod.POST)
+    public String updateTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+        if(result.hasErrors()) {
+            return "todo";
+        }
+
+        String username = (String) model.get("name");
+        todo.setUsername(username);
+        todoService.updateTodo(todo);
+
+        // we need  to redirect to list-todos rather that jsp page
+        // so that "todoService.findByUsername" logic is executed once more.
+        //return "listTodos";
+        return "redirect:list-todos";
+    }
 }
