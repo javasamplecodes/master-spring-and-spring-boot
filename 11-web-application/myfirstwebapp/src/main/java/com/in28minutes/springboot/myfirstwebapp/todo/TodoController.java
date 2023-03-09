@@ -47,7 +47,7 @@ public class TodoController {
         String username = (String) model.get("name");
         todoService.addTodo(username,
                 todo.getDescription(),
-                LocalDate.now().plusYears(1),
+                todo.getTargetDate(),
                 false);
 
         // we need  to redirect to list-todos rather that jsp page
