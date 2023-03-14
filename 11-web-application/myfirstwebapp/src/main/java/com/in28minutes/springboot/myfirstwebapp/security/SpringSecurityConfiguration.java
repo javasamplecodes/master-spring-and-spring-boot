@@ -17,16 +17,9 @@ public class SpringSecurityConfiguration {
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
-        Function<String, String> passwordEncoder =
-                input -> passwordEncoder().encode(input);
 
-        // pwd is encoded here
-        UserDetails userDetails = User.builder()
-                .passwordEncoder(passwordEncoder)
-                .username("omer")
-                .password("123")
-                .roles("USER", "ADMIN")
-                .build();
+        UserDetails userDetails1 = createNewUser("omer", "123");
+        UserDetails userDetails2 = createNewUser("omer2", "456");
 
         // withDefaultPasswordEncoder is deprecated
         /*UserDetails userDetails = User.withDefaultPasswordEncoder()
@@ -35,7 +28,21 @@ public class SpringSecurityConfiguration {
                 .roles("USER", "ADMIN")
                 .build();*/
 
-        return new InMemoryUserDetailsManager(userDetails);
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+    }
+
+    private UserDetails createNewUser(String username, String password) {
+        Function<String, String> passwordEncoder =
+                input -> passwordEncoder().encode(input);
+
+        // pwd is encoded here
+        UserDetails userDetails = User.builder()
+                .passwordEncoder(passwordEncoder)
+                .username(username)
+                .password(password)
+                .roles("USER", "ADMIN")
+                .build();
+        return userDetails;
     }
 
     // used as decoder
