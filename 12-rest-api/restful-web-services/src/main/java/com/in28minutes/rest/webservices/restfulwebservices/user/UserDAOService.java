@@ -37,6 +37,6 @@ public class UserDAOService {
         return users.stream()
                 .filter(predicate)
                 .findFirst()
-                .get();
+                .orElse(null);
     }
 }
