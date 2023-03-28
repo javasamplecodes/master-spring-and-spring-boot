@@ -1,10 +1,12 @@
 package com.in28minutes.rest.webservices.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 //@JsonIgnoreProperties("field1")
 //@JsonIgnoreProperties({"field1", "field2"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
     private String field1;
 
@@ -12,7 +14,7 @@ public class SomeBean {
     // because if field name changes, no need to change anything at
     // @JsonIgnore. In contrary, field name should also be updated at
     // @JsonIgnoreProperties
-    @JsonIgnore
+    //@JsonIgnore
     private String field2;
 
     private String field3;
