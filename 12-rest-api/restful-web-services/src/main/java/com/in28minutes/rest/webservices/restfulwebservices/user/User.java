@@ -27,6 +27,7 @@ public class User {
     //@JsonProperty("birth_date")
     private LocalDate birthDate;
 
+    // as a result of mappedBy attribute, post table contains user_id as foreign key
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Post> posts;
