@@ -30,7 +30,7 @@ public class UserJpaResource {
 //        this.service = service;
 //        this.repository = repository;
 //    }
-    
+
     public UserJpaResource(UserRepository repository) {
         this.repository = repository;
     }
