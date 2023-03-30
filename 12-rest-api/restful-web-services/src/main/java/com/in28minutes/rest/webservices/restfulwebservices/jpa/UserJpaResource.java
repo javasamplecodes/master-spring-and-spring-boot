@@ -30,8 +30,8 @@ public class UserJpaResource {
 //        this.repository = repository;
 //    }
 
-    public UserJpaResource(UserRepository repository, PostRepository postRepository) {
-        this.userRepository = repository;
+    public UserJpaResource(UserRepository userRepository, PostRepository postRepository) {
+        this.userRepository = userRepository;
         this.postRepository = postRepository;
     }
 
