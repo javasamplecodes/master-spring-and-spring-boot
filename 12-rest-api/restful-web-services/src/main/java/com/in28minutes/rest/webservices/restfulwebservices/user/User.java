@@ -9,10 +9,10 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity(name = "user_details")
-@NamedEntityGraph(
-        name = "User.posts",
-        attributeNodes = @NamedAttributeNode("posts")
-)
+//@NamedEntityGraph(
+//        name = "User.posts",
+//        attributeNodes = @NamedAttributeNode("posts")
+//)
 public class User {
     protected User() {
     }
