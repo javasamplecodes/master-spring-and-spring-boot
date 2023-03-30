@@ -29,7 +29,7 @@ public class User {
 
     // as a result of mappedBy attribute, post table contains user_id as foreign key
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+    //@JsonIgnore
     private List<Post> posts;
 
     public User(Integer id, String name, LocalDate birthDate) {
