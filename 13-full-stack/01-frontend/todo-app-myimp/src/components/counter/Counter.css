@@ -8,16 +8,24 @@
     borderRadius:"30px"
 }*/
 
-.counterButton {
+button {
     font-size: 16px;
-    background-color: #00a5ab;
-    width: 100px;
     margin: 10px;
     color: white;
     padding: 15px;
     border-radius: 30px;
     border-color: black;
     border-width: 5px;
+}
+
+.counterButton {
+    background-color: #00a5ab;
+    width: 100px;
+}
+
+.resetButton {
+    background-color: #7d00ab;
+    width: 200px;
 }
 
 .count {
