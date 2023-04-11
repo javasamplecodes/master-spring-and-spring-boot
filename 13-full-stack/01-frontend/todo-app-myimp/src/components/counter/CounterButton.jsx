@@ -7,13 +7,13 @@ export default function CounterButton({by, incrementMethod, decrementMethod}) {
     // console.log(by)
 
     function incrementCounterFunction() {
-        setCount(count + by)
+        //setCount(count + by)
         incrementMethod(by)
         // console.log("inc. " + count)
     }
 
     function decrementCounterFunction() {
-        setCount(count - by)
+        //setCount(count - by)
         decrementMethod(by)
         // console.log("decr. " + count)
     }
