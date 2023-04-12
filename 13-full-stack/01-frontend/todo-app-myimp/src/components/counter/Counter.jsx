@@ -1,6 +1,5 @@
 import './Counter.css'
 import {useState} from "react";
-import PropTypes from "prop-types";
 import CounterButton from './CounterButton'
 import ResetButton from "./ResetButton";
 
