@@ -1,12 +1,12 @@
-export default function ResetButton({resetMethod: resetMethod}) {
-    function resetCounterFunction() {
-        resetMethod()
-    }
+export default function ResetButton({resetMethod}) {
+    // function resetCounterFunction() {
+    //     resetMethod()
+    // }
 
     return (
         <div>
             <button className="resetButton"
-                    onClick={resetCounterFunction}
+                    onClick={() => resetMethod()}
             >Reset</button>
         </div>
     )
