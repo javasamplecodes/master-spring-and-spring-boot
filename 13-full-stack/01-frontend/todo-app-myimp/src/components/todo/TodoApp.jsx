@@ -116,10 +116,10 @@ function ListTodosComponent() {
                                         ]
 
     return (
-        <div className="ListTodosComponent">
+        <div className="container">
             <h1>Things You Want To Do!</h1>
             <div>
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <td>ID</td>
@@ -150,17 +150,20 @@ function ListTodosComponent() {
 
 function HeaderComponent() {
     return (
-        <div className="HeaderComponent">
+        <header className="header">
+            <div  className="container"></div>
             Header <hr/>
-        </div>
+        </header>
     )
 }
 
 function FooterComponent() {
     return (
-        <div className="FooterComponent">
-            <hr/> Footer
-        </div>
+        <footer className="footer">
+            <div className="container">
+                Your Footer
+            </div>
+        </footer>
     )
 }
 
