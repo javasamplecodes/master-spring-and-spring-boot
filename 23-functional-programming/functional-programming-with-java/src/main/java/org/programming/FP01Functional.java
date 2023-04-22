@@ -2,7 +2,7 @@ package org.programming;
 
 import java.util.List;
 
-public class FP01Structured {
+public class FP01Functional {
 
     public static void main(String[] args) {
         printAllNumbersInListFunctional(List.of(12, 9, 13, 4, 6, 2, 4, 12, 15));
@@ -14,7 +14,7 @@ public class FP01Structured {
 
     private static void printAllNumbersInListFunctional(List<Integer> numbers) {
         numbers.stream()
-                .forEach(FP01Structured::print);
+                .forEach(FP01Functional::print);
 
         // How to loop numbers -> structured way
 //        for(int number : numbers) {
