@@ -26,8 +26,10 @@ public class FP01Functional {
 
     private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
         numbers.stream()
-                .filter(FP01Functional::isEven) // Filter - Only Allow Even Numbers
+                .filter(number -> number % 2 == 0) // Lambda Expression
                 .forEach(System.out::println); // Method Reference
+
+        //      .filter(FP01Functional::isEven) // Filter - Only Allow Even Numbers
     }
 
 }
