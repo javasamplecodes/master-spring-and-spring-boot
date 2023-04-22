@@ -11,10 +11,18 @@ public class FP01Structured {
         printEvenNumbersInListStructured(numbers);
     }
 
+    private static void print(int number) {
+        System.out.println(number);
+    }
+
     private static void printAllNumbersInListStructured(List<Integer> numbers) {
-        for(int number : numbers) {
-            System.out.println(number);
-        }
+        numbers.stream()
+                .forEach(FP01Structured::print);
+
+        // How to loop numbers -> structured way
+//        for(int number : numbers) {
+//            System.out.println(number);
+//        }
     }
 
     private static void printEvenNumbersInListStructured(List<Integer> numbers) {
