@@ -144,4 +144,9 @@ public class JwtSecurityConfiguration {
                 .withPublicKey(rsaKey.toRSAPublicKey())
                 .build();
     }
+
+    @Bean
+    public JwtEncoder jwtEncoder(JWKSource<SecurityContext> jwkSource) {
+        return new NimbusJwtEncoder(jwkSource);
+    }
 }
